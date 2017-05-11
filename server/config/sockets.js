@@ -15,15 +15,8 @@ module.exports = {
         let io = socketio(server);
 
         // TODO: set this in config, + global config file
-        redisClient.on('message', function(channel, message){
-            redisClient.hgetall('DeepRL-Cartpole', function(err, object){
-                if(!err){
-                    console.log(object);
-                    io.emit('cartpole-data', object);
-                } else {
-                    logger.error(err);
-                }
-            });
+        redisClient.on('message', function(channel, data){
+            io.emit('cartpole-data', data);
         });
 
         redisClient.subscribe('DeepRL-Cartpole-Channel');
