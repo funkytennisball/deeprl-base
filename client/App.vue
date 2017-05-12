@@ -1,19 +1,15 @@
 <template>
-<div class="message">{{ msg }}</div>
+    <div id="app">
+        <p>
+            <router-link to="/foo">Foo</router-link>
+            <router-link to="/foo2">Foo 2</router-link>
+        </p>
+        <router-view></router-view>
+    </div>
 </template>
 
 <script>
 export default {
-  data () {
-    return {
-      msg: 'Hello from vue-loader!'
-    }
-  }
+    // empty
 }
 </script>
-
-<style>
-.message {
-  color: blue;
-}
-</style>

@@ -3,7 +3,7 @@
 let path = require('path');
 let _ = require('lodash');
 
-global.rootPath = path.normalize(path.join(__dirname, '..'));
+global.rootPath = path.normalize(path.join(__dirname, '..', '..'));
 
 module.exports = {
     isDevMode() {
