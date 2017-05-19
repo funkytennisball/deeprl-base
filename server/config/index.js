@@ -5,6 +5,8 @@ let _ = require('lodash');
 
 global.rootPath = path.normalize(path.join(__dirname, '..', '..'));
 
+let webpackConfig = require(path.join(global.rootPath, 'webpack.config'));
+
 module.exports = {
     isDevMode() {
 		return !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
@@ -14,7 +16,9 @@ module.exports = {
 	},
 	isTestMode() {
 		return process.env.NODE_ENV === 'test';
-	}
+	},
+
+	webpackConfig: webpackConfig
 };
 
 let baseConfig = require("./base");
